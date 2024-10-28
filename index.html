@@ -13,9 +13,13 @@
         <main>
             <video id="imggOne" class="video-bg w-full h-full" src="media/pc-bg.mp4" autoplay muted loop></video>
             <div class="output-main">
-                <div class="output_inner">
-                    <img  src="media/brand.png" alt="">
-                    
+                <div class="output_inner flex flex-col">
+                    <img class="mx-auto my-5" src="media/brand.png" alt="">
+                    <div class="searchbox_cus text-center ">
+                        <input id="srcbox" class="px-3 py-1 outline-double rounded-sm"  type="text" placeholder="type your city name...">
+                    </div>
+                    <button id="btn" class="bg-white w-16 mx-auto my-2 outline-double ">Search</button>
+                    <div id="errorOutput"></div>
                 </div>
             </div>
         </main>

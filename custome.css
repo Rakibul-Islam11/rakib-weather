@@ -26,9 +26,6 @@ main {
 .output-main {
     min-width: 350px;
     min-height: 400px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.1);
     box-shadow: 0 1px 12px rgba(0, 0, 0, 0.1);
@@ -36,9 +33,9 @@ main {
     z-index: 1;
     position: relative;
 }
-.output_inner {
-    margin-top: -315px;
-}
+/* .output_inner {
+    
+} */
 
 @media only screen and (min-width : 517px) and (max-width: 540px){
     .output-main{
@@ -49,4 +46,9 @@ main {
     .output-main {
             min-width: 247px;
         }
+}
+
+#srcbox {
+    max-width: 300px;
+    
 }

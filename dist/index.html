@@ -5,17 +5,21 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-      <script type="module" crossorigin src="/assets/index-BRMDPCx-.js"></script>
-      <link rel="stylesheet" crossorigin href="/assets/index-BBv0aqGI.css">
+      <script type="module" crossorigin src="/assets/index-elU4ZilA.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/index-bj5X349u.css">
     </head>
 
     <body>
         <main>
             <video id="imggOne" class="video-bg w-full h-full" src="media/pc-bg.mp4" autoplay muted loop></video>
             <div class="output-main">
-                <div class="output_inner">
-                    <img  src="media/brand.png" alt="">
-                    
+                <div class="output_inner flex flex-col">
+                    <img class="mx-auto my-5" src="media/brand.png" alt="">
+                    <div class="searchbox_cus text-center ">
+                        <input id="srcbox" class="px-3 py-1 outline-double rounded-sm"  type="text" placeholder="type your city name...">
+                    </div>
+                    <button id="btn" class="bg-white w-16 mx-auto my-2 outline-double ">Search</button>
+                    <div id="errorOutput"></div>
                 </div>
             </div>
         </main>
