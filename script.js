@@ -9,10 +9,17 @@ function updateBgImg() {
     }
 }
 
-
+// ডিবাউন্স ফাংশন 
+function debounce(func, delay) {
+    let timer;
+    return function () {
+        clearTimeout(timer);
+        timer = setTimeout(func, delay);
+    };
+}
 
 updateBgImg()
 // window.addEventListener('resize', function () {
 //     updateBgImg()
 // })
-window.addEventListener('resize', updateBgImg)
+window.addEventListener("resize", debounce(updateBgImg, 200));
