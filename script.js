@@ -4,16 +4,7 @@ const catchimggOne = document.getElementById("imggOne"),
     catchbtn = document.getElementById("btn"),
     catcherrorOutput = document.getElementById('errorOutput')
 
-//bg function
-function updateBgImg() {
-    if (window.innerWidth <= 600) {
-        catchimggOne.src = "media/mobile-bg.mp4";
-    } else {
-        catchimggOne.src = "media/pc-bg.mp4";
-    }
-}
-updateBgImg()
-window.addEventListener('resize', updateBgImg);
+
 //inptbox validation
 function inptValidation() {
     let getInptValue = catchsrcbox.value;
