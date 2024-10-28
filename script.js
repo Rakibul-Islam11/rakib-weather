@@ -12,7 +12,7 @@ function updateBgImg() {
         catchimggOne.src = "media/pc-bg.mp4";
     }
 }
-
+updateBgImg()
 window.addEventListener('resize', updateBgImg);
 //inptbox validation
 function inptValidation() {
