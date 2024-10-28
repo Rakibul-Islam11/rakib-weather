@@ -5,7 +5,7 @@ function updateBgImg() {
     if ( window.innerWidth <= 600 ) {
         catchimggOne.src = "media/mobile-bg.mp4"
     } else {
-        catchimggOne.src = "media/brand.png"
+        catchimggOne.src = "media/pc-bg.mp4"
     }
 }
 
