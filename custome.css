@@ -39,3 +39,14 @@ main {
 .output_inner {
     margin-top: -315px;
 }
+
+@media only screen and (min-width : 517px) and (max-width: 540px){
+    .output-main{
+        min-width: 310px;
+    }
+}
+@media only screen and (max-width : 517px){
+    .output-main {
+            min-width: 247px;
+        }
+}
