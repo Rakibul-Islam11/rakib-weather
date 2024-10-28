@@ -8,7 +8,7 @@ function updateBgImg() {
         catchimggOne.src = "media/pc-bg.mp4"
     }
 }
-
+updateBgImg()
 window.addEventListener('resize', function () {
     updateBgImg()
 })
