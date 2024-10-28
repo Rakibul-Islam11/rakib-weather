@@ -11,17 +11,37 @@
 
     <body>
         <main>
-            <video id="imggOne" class="video-bg w-full h-full" src="media/pc-bg.mp4" autoplay muted loop></video>
+            <video id="background-video" class="video-bg w-full h-full" autoplay muted loop>
+                <source id="video-source" src="media/pc-bg.mp4" type="video/mp4">
+            </video>
             <div class="output-main">
                 <div class="output_inner">
-                    <img  src="media/brand.png" alt="">
-                    
+                    <img id="responsive-img" src="media/brand.png" alt="">
                 </div>
             </div>
         </main>
 
+        <script>
+            function updateMediaSource() {
+                const videoSource = document.getElementById("video-source");
+                const video = document.getElementById("background-video");
 
-        <script type="module" src="script.js"></script>
+                if (window.innerWidth <= 600) {
+                    videoSource.src = "media/mobile-bg.mp4";
+                } else {
+                    videoSource.src = "media/pc-bg.mp4";
+                }
+
+                // ভিডিওর সোর্স পরিবর্তনের পরে ভিডিও রিফ্রেশ করতে হবে
+                video.load();
+            }
+
+            // Initial check and update on load
+            updateMediaSource();
+
+            // Update the video source on resize
+            window.addEventListener("resize", updateMediaSource);
+        </script>
     </body>
 
 </html>
