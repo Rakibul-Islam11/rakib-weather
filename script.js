@@ -63,7 +63,7 @@ function weatherWork(recdata) {
     console.log(recieveApiData)
     catcherrorOutput.innerHTML = '';
     //cloud
-    catchweather.innerHTML = `<h1>Weather: ${recieveApiData.weather[0].main} [Type - ${recieveApiData.weather[0].description}]</h1>`
+    catchweather.innerHTML = `<h1>Weather: ${recieveApiData.weather[0].main} [${recieveApiData.weather[0].description}]</h1>`
     function convertTo() {
         catchcityName.innerHTML = `<h1>${recieveApiData.name}</h1>`
         //cecius con
