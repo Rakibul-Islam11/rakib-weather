@@ -1,8 +1,5 @@
 'use strict'
 
-
-
-
 const catchimggOne = document.getElementById("imggOne"),
     catchsrcbox = document.getElementById("srcbox"),
     catchbtn = document.getElementById("btn"),
@@ -15,7 +12,8 @@ const catchimggOne = document.getElementById("imggOne"),
     catchweather = document.getElementById('weather'),
     catchwind = document.getElementById('wind'),
     catchinfoMain = document.getElementById('infoMain'),
-    catchpowerBy = document.getElementById('powerBy')
+    catchpowerBy = document.getElementById('powerBy'),
+    catchpreloader = document.getElementById('preloader')
 
 
 //inptbox validation
@@ -33,10 +31,12 @@ function inptValidation() {
 //weather api
 const apiKey = "4bf7034f65250d979e8e842ed16200fe";
 function resAPi(recgetInptValue) {
+    catchpreloader.style.display = "block"
     let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${recgetInptValue}&appid=${apiKey}`;
     fetch(apiURL)
         .then(res => res.json())
         .then(data => {
+            catchpreloader.style.display = "none"
             if (data.cod === "404") {
                 
                 catcherrorOutput.innerHTML = `<h2>${data.message}</h2>`
@@ -112,7 +112,7 @@ function weatherWork(recdata) {
             
             catchwind.innerHTML = `<h1>Wind Speed : ${conspeedd}km/h <br>----Direction: ${direction} </h1>`
         }
-        catchpowerBy.innerHTML = `<h5>Powerd by <span class="text-red-500">RAKIB</span></h5>`
+        catchpowerBy.innerHTML = `<h5><span class="text-black">Powerd by</span> <span class="text-red-500">RAKIB</span></h5>`
         wind()
     }
     convertTo()
@@ -120,6 +120,16 @@ function weatherWork(recdata) {
 
 }
 
-
-// বাটনে ক্লিক করলে `inptValidation` ফাংশন কল হবে
-catchbtn.addEventListener('click', inptValidation);
+catchbtn.addEventListener('click', function(){
+    inptValidation()
+    catchsrcbox.value = ''
+    // Clear previous data
+    catchcityName.innerHTML = '';
+    catchcelcius.innerHTML = '';
+    catchsunrise.innerHTML = '';
+    catchsunset.innerHTML = '';
+    catchvisibility.innerHTML = '';
+    catchweather.innerHTML = '';
+    catchwind.innerHTML = '';
+    catchpowerBy.innerHTML = '';
+})
