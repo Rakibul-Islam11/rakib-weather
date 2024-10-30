@@ -15,7 +15,6 @@ const catchimggOne = document.getElementById("imggOne"),
     catchpowerBy = document.getElementById('powerBy'),
     catchpreloader = document.getElementById('preloader')
 
-
 //inptbox validation
 function inptValidation() {
     let getInptValue = catchsrcbox.value;
@@ -60,7 +59,6 @@ function resAPi(recgetInptValue) {
 
 function weatherWork(recdata) {
     let recieveApiData = recdata;
-    console.log(recieveApiData)
     catcherrorOutput.innerHTML = '';
     //cloud
     catchweather.innerHTML = `<h1><span class="text-md font-bold">Weather:</span> ${recieveApiData.weather[0].main} [${recieveApiData.weather[0].description}]</h1>`
@@ -74,16 +72,16 @@ function weatherWork(recdata) {
         //sunrise and sunset con
         let sunrise = recieveApiData.sys.sunrise;
         let getTimeSunrise = new Date(sunrise * 1000);
-        catchsunrise.innerHTML = `<h1><span class="text-md font-bold">Sunrise : </span>${getTimeSunrise.toLocaleTimeString()}</h1>`
+        catchsunrise.innerHTML = `<h1><span class="text-md font-bold">Sunrise :</span>${getTimeSunrise.toLocaleTimeString()}</h1>`
         //sunset
         let sunset = recieveApiData.sys.sunset;
         let getTimeSunset = new Date(sunset * 1000);
-        catchsunset.innerHTML = `<h1><span class="text-md font-bold">Sunset :  </span>${getTimeSunset.toLocaleTimeString()}</h1>`
+        catchsunset.innerHTML = `<h1><span class="text-md font-bold">Sunset :</span>${getTimeSunset.toLocaleTimeString()}</h1>`
 
         //visibility con
         let visi = recieveApiData.visibility;
         let conVisi = visi / 1000
-        catchvisibility.innerHTML = `<h1><span class="text-md font-bold">Visibility :   </span>${conVisi} km </h1>`
+        catchvisibility.innerHTML = `<h1><span class="text-md font-bold">Visibility :</span>${conVisi} km </h1>`
 
         //wind
         function wind() {
@@ -103,14 +101,9 @@ function weatherWork(recdata) {
             //speed
             let spedd = recieveApiData.wind.speed;
             let conspeedd = (spedd * 3.6).toFixed(2)
-            //gust
-            let gustt = recieveApiData.wind.gust;
-            let congustt = (gustt * 3.6).toFixed(2)
-            console.log(congustt);
-            
-            
-            
-            catchwind.innerHTML = `<h1>Wind Speed : ${conspeedd}km/h <br>----Direction: ${direction} </h1>`
+
+
+            catchwind.innerHTML = `<h1><span class="text-md font-bold"> Wind Speed : </span> ${conspeedd}km/h <br>----Direction: ${direction} </h1>`
         }
         catchpowerBy.innerHTML = `<h5><span class="text-black">Powerd by</span> <span class="text-red-500">RAKIB</span></h5>`
         wind()
