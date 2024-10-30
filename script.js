@@ -63,27 +63,27 @@ function weatherWork(recdata) {
     console.log(recieveApiData)
     catcherrorOutput.innerHTML = '';
     //cloud
-    catchweather.innerHTML = `<h1>Weather: ${recieveApiData.weather[0].main} [${recieveApiData.weather[0].description}]</h1>`
+    catchweather.innerHTML = `<h1><span class="text-md font-bold">Weather:</span> ${recieveApiData.weather[0].main} [${recieveApiData.weather[0].description}]</h1>`
     function convertTo() {
         catchcityName.innerHTML = `<h1>${recieveApiData.name}</h1>`
         //cecius con
         let getTemp = recieveApiData.main.temp;
         let defcel = (getTemp - 273.15).toFixed(2) + "°C";
-        catchcelcius.innerHTML = `<h1>Temperature : ${defcel} </h1>`
+        catchcelcius.innerHTML = `<h1><span class="text-md font-bold">Temperature :</span> ${defcel} </h1>`
         
         //sunrise and sunset con
         let sunrise = recieveApiData.sys.sunrise;
         let getTimeSunrise = new Date(sunrise * 1000);
-        catchsunrise.innerHTML = `<h1>Sunrise : ${getTimeSunrise.toLocaleTimeString()}</h1>`
+        catchsunrise.innerHTML = `<h1><span class="text-md font-bold">Sunrise : </span>${getTimeSunrise.toLocaleTimeString()}</h1>`
         //sunset
         let sunset = recieveApiData.sys.sunset;
         let getTimeSunset = new Date(sunset * 1000);
-        catchsunset.innerHTML = `<h1>Sunset : ${getTimeSunset.toLocaleTimeString()}</h1>`
+        catchsunset.innerHTML = `<h1><span class="text-md font-bold">Sunset :  </span>${getTimeSunset.toLocaleTimeString()}</h1>`
 
         //visibility con
         let visi = recieveApiData.visibility;
         let conVisi = visi / 1000
-        catchvisibility.innerHTML = `<h1>Visibility : ${conVisi} km </h1>`
+        catchvisibility.innerHTML = `<h1><span class="text-md font-bold">Visibility :   </span>${conVisi} km </h1>`
 
         //wind
         function wind() {
