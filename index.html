@@ -7,6 +7,7 @@
         <title>Document</title>
         <link rel="stylesheet" href="/main.css">
         <link rel="stylesheet" href="/custome.css">
+        
     </head>
 
     <body>
@@ -19,7 +20,18 @@
                         <input id="srcbox" class="px-2 py-1 outline-double rounded-sm"  type="text" placeholder="type your city name...">
                     </div>
                     <button id="btn" class="bg-white w-16 mx-auto my-2 outline-double ">Search</button>
-                    <div id="errorOutput"></div>
+                    <div id="errorOutput" class="text-red-500 text-3xl text-center"></div>
+                    <!--weather data show start here-->
+                    <div id="infoMain" class="info_main flex flex-col items-start m-auto gap-1 text-white">
+                        <div id="cityName" class="text-center m-auto text-2xl font-bold"></div>
+                        <div id="weather" class=""></div>
+                        <div id="celcius" class=""></div>
+                        <div id="visibility" class=""></div>
+                        <div id="wind" class=""></div>
+                        <div id="sunrise" class=""></div>
+                        <div id="sunset" class=""></div>
+                    </div>
+                    <div id="powerBy" class="ms-auto text-sm font-bold italic pt-2 px-2"></div>
                 </div>
             </div>
         </main>
